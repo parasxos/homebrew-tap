@@ -3,8 +3,8 @@ class AppleMailMcp < Formula
 
   desc "Fast local access to Apple Mail: sub-ms search over Mail's own SQLite index, verified sends, MCP server for AI clients"
   homepage "https://github.com/parasxos/apple-mail-mcp"
-  url "https://files.pythonhosted.org/packages/71/fc/43ebbe74b72293de459a2816c744f52b153c3a574d08d3b32611ac07cd89/apple_mailbox_mcp-1.5.2.tar.gz"
-  sha256 "0dc21e767fe18e8aebb693dbaec9fa50fa65a025feda132016342b9ada993d81"
+  url "https://files.pythonhosted.org/packages/f1/33/65ac88fb1fd38a8690c2d250dee791b0ad271e138abb9274b03bd96c5e43/apple_mailbox_mcp-1.6.0.tar.gz"
+  sha256 "2931219e3848c192f7eff53c025a49b544cae5b5a36f745e625eb866a49dba2f"
   license "MIT"
 
   depends_on "rust" => :build
