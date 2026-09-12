@@ -1,7 +1,7 @@
 class AppleMailMcp < Formula
   include Language::Python::Virtualenv
 
-  desc "Fast local access to Apple Mail: sub-ms search over Mail's own SQLite index, verified sends, MCP server for AI clients"
+  desc "Local Apple Mail MCP server with indexed search, triage, and verified sends"
   homepage "https://github.com/parasxos/apple-mail-mcp"
   url "https://files.pythonhosted.org/packages/f1/33/65ac88fb1fd38a8690c2d250dee791b0ad271e138abb9274b03bd96c5e43/apple_mailbox_mcp-1.6.0.tar.gz"
   sha256 "2931219e3848c192f7eff53c025a49b544cae5b5a36f745e625eb866a49dba2f"
