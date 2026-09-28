@@ -3,8 +3,8 @@ class AppleMailMcp < Formula
 
   desc "Local Apple Mail MCP server with indexed search, triage, and verified sends"
   homepage "https://github.com/parasxos/apple-mail-mcp"
-  url "https://files.pythonhosted.org/packages/f4/f2/812396fd957eac225ed0042bfaec840453f6b430c405dbeedba8dc2f1738/apple_mailbox_mcp-1.7.0.tar.gz"
-  sha256 "b72fc7a494bedb1e1298cf7046f7531cc29767b75034c50505abe1f589e8c9b4"
+  url "https://files.pythonhosted.org/packages/7d/2a/0f4806548f624a7dbe62680df5e3c37654c33690793d6c17ce858e160c33/apple_mailbox_mcp-1.8.0.tar.gz"
+  sha256 "094f2304b325d509e5363ee6fa0f20cfdc4a32d17f8a3033001a6e21bb0f46e1"
   license "MIT"
 
   depends_on "rust" => :build
@@ -77,13 +77,13 @@ class AppleMailMcp < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/d4/6e/21fb8e5d579dbe21d96ea4d5034200d46d8bdf2261053b5bd041f3c2f612/mcp-2.1.1.tar.gz"
-    sha256 "50b7ba1ebbe117008ea7bdd288234043e69c20b403d6851d19661e6d431a75ef"
+    url "https://files.pythonhosted.org/packages/76/31/ac54fb0fdd5b37de704486e288bba4fbbb463f24cfcfedbede407b854513/mcp-2.2.0.tar.gz"
+    sha256 "2dc37ecb1974becdcebdbf7561e7c15a07dbbf20ba21ba16c3593b3038b3afbd"
   end
 
   resource "mcp-types" do
-    url "https://files.pythonhosted.org/packages/6a/dd/1c4417dc0b722c23a1669032d5f044e41170fe5d4773b488a50fcce98c32/mcp_types-2.1.1.tar.gz"
-    sha256 "77dcbe48fba73cca71a673f2646a5f037a017b7a0a07ac89cec1113028890eda"
+    url "https://files.pythonhosted.org/packages/ae/91/762d7755d971aff8a28d75f7961656148edf27875c8026e6385aaab08ae7/mcp_types-2.2.0.tar.gz"
+    sha256 "d3ed53703ddd10d9c6399f29d322bb66f3f67ab41348ac8556ba23e07fedefad"
   end
 
   resource "opentelemetry-api" do
@@ -157,6 +157,7 @@ class AppleMailMcp < Formula
   end
 
   def install
+    ENV["CARGO_PROFILE_RELEASE_STRIP"] = "none"
     virtualenv_install_with_resources
   end
 
@@ -170,5 +171,6 @@ class AppleMailMcp < Formula
 
   test do
     assert_match "apple-mailbox-mcp", shell_output("#{bin}/apple-mail-mcp help")
+    system libexec/"bin/python", "-c", "import email_mcp.mcp_compat"
   end
 end
