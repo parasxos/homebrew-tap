@@ -3,8 +3,8 @@ class AppleMailMcp < Formula
 
   desc "Local Apple Mail MCP server with indexed search, triage, and verified sends"
   homepage "https://github.com/parasxos/apple-mail-mcp"
-  url "https://files.pythonhosted.org/packages/32/69/1a5ca52887842df7953cb82bdbd2bda1d3d7cb391da78729098ddb95fde2/apple_mailbox_mcp-1.8.2.tar.gz"
-  sha256 "b78373b0423d601ba89935ce963b5c3e4ebd3b8338adce6beff68e1efe2676c5"
+  url "https://files.pythonhosted.org/packages/4c/7a/8a3aeb333fc746a332a5d9f4d37889516db32b3818f11329fd0ed50a26d9/apple_mailbox_mcp-1.8.3.tar.gz"
+  sha256 "d6f2cbc8557e11ebe16810bb46a61f80c5afa07a53b27c1ef2d694be1ebaf9d6"
   license "MIT"
 
   depends_on "rust" => :build
